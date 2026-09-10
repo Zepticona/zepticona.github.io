@@ -4,18 +4,18 @@ Built on the [academicpages](https://github.com/academicpages/academicpages.gith
 
 ## Structure
 
-| What | Where |
-|---|---|
-| Site-wide settings (name, bio, social links) | `_config.yml` |
-| Top navigation (which sections show up) | `_data/navigation.yml` |
-| Homepage / About | `_pages/about.md` |
-| CV page | `_pages/cv.md` |
-| Portfolio entries | `_portfolio/*.md` (one file per project) |
-| Publications (currently empty, ready to use) | `_publications/*.md` |
-| Talks (currently empty, ready to use) | `_talks/*.md` |
-| Teaching (currently empty, ready to use) | `_teaching/*.md` |
-| Uploaded files (CV PDF, etc.) | `files/` |
-| Profile photo | `images/profile.png` |
+| What                                         | Where                                    |
+| -------------------------------------------- | ---------------------------------------- |
+| Site-wide settings (name, bio, social links) | `_config.yml`                            |
+| Top navigation (which sections show up)      | `_data/navigation.yml`                   |
+| Homepage / About                             | `_pages/about.md`                        |
+| CV page                                      | `_pages/cv.md`                           |
+| Portfolio entries                            | `_portfolio/*.md` (one file per project) |
+| Publications (currently empty, ready to use) | `_publications/*.md`                     |
+| Talks (currently empty, ready to use)        | `_talks/*.md`                            |
+| Teaching (currently empty, ready to use)     | `_teaching/*.md`                         |
+| Uploaded files (CV PDF, etc.)                | `files/`                                 |
+| Profile photo                                | `images/profile.png`                     |
 
 ## How to add a new section later (e.g. Publications)
 
