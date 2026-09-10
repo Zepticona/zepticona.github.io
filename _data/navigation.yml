@@ -1,0 +1,31 @@
+# The following is the order of the links in the header of the website.
+#
+# Changing the order here will adjust the order and you can also add additional
+# links. Removing a link prevents it from showing in the header, but does not
+# prevent it from being included in the site.
+#
+# TO ADD A SECTION LATER: uncomment the relevant block below.
+# TO REMOVE A SECTION: comment it out (or delete it), the underlying files
+# stay in the repo untouched, they just won't be linked in the nav.
+
+main:
+  - title: "Portfolio"
+    url: /portfolio/
+
+  - title: "CV"
+    url: /cv/
+
+  # - title: "Publications"
+  #   url: /publications/
+
+  # - title: "Talks"
+  #   url: /talks/
+
+  # - title: "Teaching"
+  #   url: /teaching/
+
+  # - title: "Blog Posts"
+  #   url: /year-archive/
+
+  # - title: "Guide"
+  #   url: /markdown/
