@@ -4,17 +4,17 @@ Plain HTML/CSS/JS, no build tools, no Ruby, no npm required. Single page, with e
 
 ## Structure
 
-| What | Where |
-|---|---|
-| Page shell (sidebar nav + section slots) | `index.html` |
-| Styling (colors, type, layout) | `css/style.css` |
-| Section loader + nav behavior | `js/main.js` |
-| About / hero content | `sections/about.html` |
-| Research content | `sections/research.html` |
-| Publications content | `sections/publications.html` |
-| CV content | `sections/cv.html` |
-| Profile photo | `images/profile.jpg` |
-| CV PDF (download button target) | `files/PhD_Application_CV.pdf` |
+| What                                     | Where                          |
+| ---------------------------------------- | ------------------------------ |
+| Page shell (sidebar nav + section slots) | `index.html`                   |
+| Styling (colors, type, layout)           | `css/style.css`                |
+| Section loader + nav behavior            | `js/main.js`                   |
+| About / hero content                     | `sections/about.html`          |
+| Research content                         | `sections/research.html`       |
+| Publications content                     | `sections/publications.html`   |
+| CV content                               | `sections/cv.html`             |
+| Profile photo                            | `images/profile.png`           |
+| CV PDF (download button target)          | `files/PhD_Application_CV.pdf` |
 
 **To edit any section, open its file in `sections/` directly.** You never need to touch `index.html` unless you're adding or removing an entire section.
 
@@ -31,6 +31,7 @@ Plain HTML/CSS/JS, no build tools, no Ruby, no npm required. Single page, with e
 ## Adding or removing a section
 
 **To add a new section** (e.g. "Teaching"):
+
 1. Create `sections/teaching.html` with your content
 2. In `index.html`, add a placeholder: `<section id="teaching" class="section" data-include="sections/teaching.html"></section>`
 3. In `index.html`'s sidebar nav list, add: `<li><a href="#teaching" data-section="teaching">Teaching</a></li>`
@@ -57,5 +58,5 @@ No Ruby, no `bundle install`, no terminal commands needed.
 ## TODO
 
 - [ ] Add a real GitHub link for the Scam Detector project (currently referenced only in the CV text, add a repo link if you want one)
-- [ ] Replace `images/profile.jpg` if you want a different headshot
+- [ ] Replace `images/profile.png` if you want a different headshot
 - [ ] Update `files/PhD_Application_CV.pdf` whenever your CV changes (filename must stay the same, or update the link in `sections/about.html` and `sections/cv.html`)

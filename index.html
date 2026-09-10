@@ -1,69 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shahriar Islam Sakil</title>
-<meta name="description" content="Academic portfolio of Shahriar Islam Sakil — NLP, Agentic AI, Time Series Forecasting, Network Intrusion Detection.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shahriar Islam Sakil</title>
+    <meta
+      name="description"
+      content="Academic portfolio of Shahriar Islam Sakil — NLP, Agentic AI, Time Series Forecasting, Network Intrusion Detection."
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-<a class="skip-link" href="#main">Skip to content</a>
+    <div class="layout">
+      <!-- Sidebar / table of contents -->
+      <header class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+          <a href="#top" class="wordmark" aria-label="Home">
+            <svg class="wordmark-signal" viewBox="0 0 60 20" aria-hidden="true">
+              <polyline points="0,10 12,10 16,3 22,17 28,10 60,10" />
+            </svg>
+            <!-- <span>Shahriar Islam Sakil</span> -->
+          </a>
 
-<div class="layout">
+          <nav class="toc" aria-label="Section navigation">
+            <button
+              class="toc-toggle"
+              id="tocToggle"
+              aria-expanded="false"
+              aria-controls="tocList"
+            >
+              <span>Menu</span>
+              <svg
+                viewBox="0 0 20 20"
+                class="toc-toggle-icon"
+                aria-hidden="true"
+              >
+                <path d="M3 6h14M3 10h14M3 14h14" />
+              </svg>
+            </button>
+            <ul id="tocList">
+              <li><a href="#about" data-section="about">About</a></li>
+              <li><a href="#research" data-section="research">Research</a></li>
+              <li>
+                <a href="#publications" data-section="publications"
+                  >Publications</a
+                >
+              </li>
+              <li><a href="#cv" data-section="cv">CV</a></li>
+            </ul>
+          </nav>
 
-  <!-- Sidebar / table of contents -->
-  <header class="sidebar" id="sidebar">
-    <div class="sidebar-inner">
-      <a href="#top" class="wordmark" aria-label="Home">
-        <svg class="wordmark-signal" viewBox="0 0 60 20" aria-hidden="true">
-          <polyline points="0,10 12,10 16,3 22,17 28,10 60,10" />
-        </svg>
-        <span>Shahriar Islam Sakil</span>
-      </a>
+          <div class="sidebar-contact">
+            <a href="mailto:shahriar.i.sakil@gmail.com"
+              >shahriar.i.sakil@gmail.com</a
+            >
+            <a
+              href="https://linkedin.com/in/shahriar-i-sakil"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/Zepticona"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </header>
 
-      <nav class="toc" aria-label="Section navigation">
-        <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="tocList">
-          <span>Menu</span>
-          <svg viewBox="0 0 20 20" class="toc-toggle-icon" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" /></svg>
-        </button>
-        <ul id="tocList">
-          <li><a href="#about" data-section="about">About</a></li>
-          <li><a href="#research" data-section="research">Research</a></li>
-          <li><a href="#publications" data-section="publications">Publications</a></li>
-          <li><a href="#cv" data-section="cv">CV</a></li>
-        </ul>
-      </nav>
+      <!-- Main content: each section is loaded from its own file in /sections -->
+      <main id="main">
+        <div id="top"></div>
+        <section
+          id="about"
+          class="section"
+          data-include="sections/about.html"
+        ></section>
+        <section
+          id="research"
+          class="section"
+          data-include="sections/research.html"
+        ></section>
+        <section
+          id="publications"
+          class="section"
+          data-include="sections/publications.html"
+        ></section>
+        <section
+          id="cv"
+          class="section"
+          data-include="sections/cv.html"
+        ></section>
 
-      <div class="sidebar-contact">
-        <a href="mailto:shahriar.i.sakil@gmail.com">shahriar.i.sakil@gmail.com</a>
-        <a href="https://linkedin.com/in/shahriar-i-sakil" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Zepticona" target="_blank" rel="noopener">GitHub</a>
-      </div>
+        <footer class="site-footer">
+          <p>&copy; 2026 Shahriar Islam Sakil.</p>
+        </footer>
+      </main>
     </div>
-  </header>
 
-  <!-- Main content: each section is loaded from its own file in /sections -->
-  <main id="main">
-    <div id="top"></div>
-    <section id="about" class="section" data-include="sections/about.html"></section>
-    <section id="research" class="section" data-include="sections/research.html"></section>
-    <section id="publications" class="section" data-include="sections/publications.html"></section>
-    <section id="cv" class="section" data-include="sections/cv.html"></section>
-
-    <footer class="site-footer">
-      <p>&copy; 2026 Shahriar Islam Sakil.</p>
-    </footer>
-  </main>
-
-</div>
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
