@@ -1,64 +1,61 @@
-# Shahriar Islam Sakil — Academic Portfolio
+# Shahriar Islam Sakil — Academic Portfolio (Static HTML)
 
-Built on the [academicpages](https://github.com/academicpages/academicpages.github.io) Jekyll template, trimmed down to only the sections currently in use, structured so new sections can be re-enabled later without touching layout code.
+Plain HTML/CSS/JS, no build tools, no Ruby, no npm required. Single page, with each content section living in its own file.
 
 ## Structure
 
-| What                                         | Where                                    |
-| -------------------------------------------- | ---------------------------------------- |
-| Site-wide settings (name, bio, social links) | `_config.yml`                            |
-| Top navigation (which sections show up)      | `_data/navigation.yml`                   |
-| Homepage / About                             | `_pages/about.md`                        |
-| CV page                                      | `_pages/cv.md`                           |
-| Portfolio entries                            | `_portfolio/*.md` (one file per project) |
-| Publications (currently empty, ready to use) | `_publications/*.md`                     |
-| Talks (currently empty, ready to use)        | `_talks/*.md`                            |
-| Teaching (currently empty, ready to use)     | `_teaching/*.md`                         |
-| Uploaded files (CV PDF, etc.)                | `files/`                                 |
-| Profile photo                                | `images/profile.png`                     |
+| What | Where |
+|---|---|
+| Page shell (sidebar nav + section slots) | `index.html` |
+| Styling (colors, type, layout) | `css/style.css` |
+| Section loader + nav behavior | `js/main.js` |
+| About / hero content | `sections/about.html` |
+| Research content | `sections/research.html` |
+| Publications content | `sections/publications.html` |
+| CV content | `sections/cv.html` |
+| Profile photo | `images/profile.jpg` |
+| CV PDF (download button target) | `files/PhD_Application_CV.pdf` |
 
-## How to add a new section later (e.g. Publications)
+**To edit any section, open its file in `sections/` directly.** You never need to touch `index.html` unless you're adding or removing an entire section.
 
-1. Add a markdown file into the relevant folder (e.g. `_publications/2027-01-01-my-paper.md`), following the front-matter format of the template's original sample files (check the [academicpages wiki](https://github.com/academicpages/academicpages.github.io/wiki) if you deleted the samples and forget the format).
-2. Open `_data/navigation.yml` and uncomment the matching block (or add a new one).
-3. Commit and push. GitHub Pages rebuilds automatically.
+## How it's modular
 
-## How to add a new portfolio project
+`index.html` has empty placeholders like:
 
-Add a new file to `_portfolio/`, e.g. `_portfolio/my-new-project.md`:
-
-```markdown
----
-title: "Project Name"
-excerpt: "One-line description.<br/>"
-collection: portfolio
----
-
-Full project description here.
+```html
+<section id="cv" class="section" data-include="sections/cv.html"></section>
 ```
 
-## Local setup (to preview before pushing)
+`js/main.js` fetches each `sections/*.html` file at page load and drops its content into the matching placeholder. So each section is a genuinely separate, independently editable file.
 
-Requires Ruby + Bundler installed locally.
+## Adding or removing a section
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+**To add a new section** (e.g. "Teaching"):
+1. Create `sections/teaching.html` with your content
+2. In `index.html`, add a placeholder: `<section id="teaching" class="section" data-include="sections/teaching.html"></section>`
+3. In `index.html`'s sidebar nav list, add: `<li><a href="#teaching" data-section="teaching">Teaching</a></li>`
 
-Then visit `http://localhost:4000`.
+**To remove a section:** delete its `<li>` from the nav and its `<section>` placeholder in `index.html`. You can leave the file in `sections/` untouched, it just won't be loaded.
 
-## Deploying
+## Previewing locally
 
-1. Push this repo to `https://github.com/[your-username]/[your-username].github.io`
-2. In the repo's Settings > Pages, confirm the source is set to the `main` branch (or whichever branch you push to)
-3. Your site will be live at `https://[your-username].github.io` within a few minutes
+Because sections are loaded via JavaScript's `fetch()`, opening `index.html` by double-clicking it won't work (browsers block `fetch` on local files for security reasons). You need a local server, which is one click in VS Code:
 
-## TODO checklist before going live
+1. Install the **Live Server** extension (search for it in VS Code's Extensions panel)
+2. Right-click `index.html` in the file explorer → **Open with Live Server**
+3. Your browser opens automatically at `http://127.0.0.1:5500` (or similar), and it live-reloads on save
 
-- [ ] Set `github`, `linkedin`, and `googlescholar` fields in `_config.yml`
-- [ ] Replace `url` and `repository` in `_config.yml` with your actual GitHub username
-- [ ] Add your headshot as `images/profile.png`
-- [ ] Upload your CV PDF as `files/CV.pdf`
-- [ ] Add real GitHub links in `_pages/cv.md` and `_portfolio/scam-detector.md`
-- [ ] Double check IELTS score line in `_pages/cv.md` (General Training vs Academic)
+No Ruby, no `bundle install`, no terminal commands needed.
+
+## Deploying to GitHub Pages
+
+1. Push this folder's contents to `[your-username].github.io` (same repo as before, this replaces the Jekyll version entirely)
+2. In repo Settings → Pages, confirm the source is the `main` branch, root folder
+3. Visit `https://[your-username].github.io`, it works immediately, GitHub Pages serves plain HTML natively, no build step needed
+4. The included `.nojekyll` file tells GitHub not to try running its Jekyll processor over this, since it's not needed anymore
+
+## TODO
+
+- [ ] Add a real GitHub link for the Scam Detector project (currently referenced only in the CV text, add a repo link if you want one)
+- [ ] Replace `images/profile.jpg` if you want a different headshot
+- [ ] Update `files/PhD_Application_CV.pdf` whenever your CV changes (filename must stay the same, or update the link in `sections/about.html` and `sections/cv.html`)
