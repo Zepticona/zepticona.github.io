@@ -9,14 +9,14 @@
 # stay in the repo untouched, they just won't be linked in the nav.
 
 main:
-  - title: "Portfolio"
-    url: /portfolio/
-
   - title: "CV"
     url: /cv/
 
-  # - title: "Publications"
-  #   url: /publications/
+  - title: "Research"
+    url: /research/
+
+  - title: "Publications"
+    url: /publications/
 
   # - title: "Talks"
   #   url: /talks/
